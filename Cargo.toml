@@ -1,0 +1,24 @@
+[package]
+name = "cortex9-cap-token-broker"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "Apache-2.0"
+description = "Attenuable capability tokens (chained HMAC, macaroon-style) with revocation, hexagonal architecture."
+authors = ["Federico Nicolas Baez Rizzo"]
+repository = "https://github.com/federiconbaez/cortex9-cap-token-broker"
+readme = "README.md"
+
+[dependencies]
+# Used only by src/adapters (enforced by scripts/check-architecture.sh).
+hmac = "0.12"
+sha2 = "0.10"
+subtle = "2"
+getrandom = "0.2"
+base64 = "0.22"
+
+[dev-dependencies]
+proptest = "1"
+
+[lints.rust]
+unsafe_code = "forbid"
